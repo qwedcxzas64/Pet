@@ -29,7 +29,7 @@ const Gidro = () =>{
     const isMounted = React.useRef(false);
     
     
-const GetGidro = async () =>{
+const GetGidro =  async () =>{
     dispatch(fetchGidro({
         PaginationCurrent,
         PerPage,
@@ -47,11 +47,11 @@ const onclickDELETEITEM = (i:number) =>{
     
 } 
 useEffect(()=>{
-   if(adressstring) {
+   if(window.location.search) {
         GetGidro()
-        
+       
     }   
-    
+    isMounted.current = true;
 }, [adressstring, PaginationCurrent])
 
 
@@ -65,21 +65,21 @@ useEffect(()=>{
       navigate (`?${queryString}`)
       
     } 
-    isMounted.current = true;
+    
     
    } , [PaginationCurrent, adressstring, PerPage,  ])
  
   
    
 
-// React.useEffect(()=>{
-//     if(isMounted.current){
-//         const json =JSON.stringify(GidroItems)
-//         localStorage.setItem('state', json)
+React.useEffect(()=>{
+    if(isMounted.current){
+        const json =JSON.stringify(GidroItems)
+        localStorage.setItem('state', json)
         
-//     }
+    }
     
-// },[GidroItems, adressstring])
+},[GidroItems, adressstring])
 
 
 

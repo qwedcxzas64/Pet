@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { SetADDitem, type Gidro } from '../../Redux/slices/GidroSlice';
 import { useAppDispatch} from "../../Redux/Store";
 import { useSelector} from "react-redux";
+import axios from 'axios';
 
 const styles = require('../../styles/main.module.scss');
 
@@ -18,15 +19,16 @@ const dispatch = useAppDispatch()
       } = useForm({
         mode: 'onBlur'
       });
-      const isMounted = React.useRef(false);
+      const isMounted = React.useRef(true);
      
       const GidroItems = useSelector((state:any)=> state.GidroSlice.items)
       const randomNum = Math.floor(Math.random() * 100);;
       
       
 const onSubmit = (data:Gidro) =>{
-  data = {
-    id: `${randomNum}`,
+    axios.post(`https://65aebe7a1dfbae409a757a67.mockapi.io/pizzas`, 
+        data = { 
+            id: `${randomNum}`,
      imageUrl : data.imageUrl,
       title : data.title,
        power: 77,
@@ -34,21 +36,20 @@ const onSubmit = (data:Gidro) =>{
     price: data.price,
     favorite: 0,
     stoke: data.stoke > 0 ? 0 : 1
-  }
-    dispatch(SetADDitem( data))
-    
+        }
+    )
     reset()
 }
 
 
-React.useEffect(()=>{
-    if(GidroItems){
-        const json =JSON.stringify(GidroItems)
-        localStorage.setItem('state', json)
-        isMounted.current = false
-    }
+// React.useEffect(()=>{
+//     if(GidroItems){
+//         const json =JSON.stringify(GidroItems)
+//         localStorage.setItem('state', json)
+//         isMounted.current = false
+//     }
     
-},[GidroItems])
+// },[GidroItems])
 
 
 

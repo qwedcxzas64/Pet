@@ -10,6 +10,7 @@ const styles = require('../../styles/main.module.scss');
 
 
 const Main = () =>{
+    alert('Список продуктов и вкладка добавления товара подсвечены синим!!!')
     return (
 <div className={`${styles.wrapper} ${styles.container}`}>
     <Title/>

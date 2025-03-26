@@ -123,9 +123,9 @@ export const GidroSlice = createSlice({
                 SetADDitem(state, action){
                      const {id, stoke, imageUrl, title} = action.payload
                   const ADDITEM = action.payload   
-               const asda =   state.items.concat (ADDITEM)
-               state.itemsforsort = asda
-               state.items = asda
+               const NEWARR =   state.items.concat (ADDITEM)
+               state.itemsforsort = NEWARR
+               state.items = NEWARR
                   
                
                 }
