@@ -1,0 +1,51 @@
+@use '../helpers' as *;
+
+.wrapper__paginate{
+    position: relative;
+    .paginate__list{
+        position: absolute;
+        left: rem(370);
+        bottom: rem(-130);
+        display: flex;
+        column-gap: rem(9);
+        svg{
+            cursor: pointer;
+            width: fluid(11, 8);
+            height: fluid(11, 7);
+            fill: transparent;
+            stroke: white;
+            border-radius: 100%;
+            color: white;
+stroke-width: 1px;
+        }
+        .paginate__active svg{
+            fill: white;
+        }
+        @include mobile{
+            display: none;
+        }
+    }
+    .paginate__arrow_wrapper{
+        padding-left: rem(15);
+        padding-right: rem(15);
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        svg{
+            cursor: pointer;
+            color: white;
+            width: rem(16);
+            height: rem(29);
+            
+        }
+        .paginate__arrow_disabled  {
+            opacity: 0;
+            pointer-events: none;
+        }
+        @media(max-width:1442px){
+            display: none;
+        }
+
+    }
+    
+}

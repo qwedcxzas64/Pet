@@ -1,0 +1,16 @@
+@use 'normilize';
+@use 'fonts';
+@use 'variables';
+@use 'utils';
+@use 'globals';
+
+
+
+
+@use './blocks/header/header';
+@use './blocks/footer';
+@use './blocks/main.module';
+@use './blocks/bannerpagination.module';
+@use './blocks/Gidro.module';
+@use './blocks/filter';
+@use './blocks/gidrocartitems'

@@ -1,0 +1,29 @@
+@use './helpers' as *;
+
+
+
+
+
+:root{
+    --color-white : #fff;
+    --color-blue : #1C62CD;
+    --color-grey : #F0F0F4;
+    --color-greylight : #C4C4C4;
+    --color-black : #2F3035;
+
+
+    --font-family-base: 'SF-Pro-Display', sans-serif;
+    --font-family-accent: 'Barlow' , sans-serif;
+    --font-family-third : 'Raleway' , sans-serif;
+
+
+
+    --container-width : #{rem(1171)};
+    --container-padding-x : #{rem(16)}; //падинг в мобилке
+
+    --transition-duration: 0.2s;
+
+    @include laptop {
+        --container-width : #{rem(1000)};
+    };
+}

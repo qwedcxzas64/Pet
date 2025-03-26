@@ -1,0 +1,180 @@
+@use '../helpers' as *;
+
+.footer__wrapper {
+  padding-top: rem(42);
+  background-color: var(--color-grey);
+  max-width: rem(1920);
+  margin-left: auto;
+  margin-right: auto;
+  .footer__inner {
+    display: flex;
+    @media(max-width:792px){
+      display: block;
+      text-align: left;
+    }
+    .footer__input {
+        margin-right: rem(129);
+      p {
+        font-weight: 700;
+        font-size: rem(14);
+      }
+      @media(max-width: 872px){
+        margin-right: rem(90);
+      }
+      @media(max-width:792px){
+        margin-right: 0;
+        p{
+          margin-top: rem(17);
+        }
+        
+      }
+      input {
+        margin-top: rem(34);
+        padding-top: rem(8);
+        padding-bottom: rem(8);
+        padding-left: rem(12);
+        padding-right: rem(50);
+        border: none;
+        @media(max-width:792px){
+          margin-top: rem(20);
+          padding-left: rem(14);
+          padding-right: rem(46);
+          margin-bottom: rem(57);
+        }
+      }
+      input::placeholder {
+        font-weight: 400;
+        font-size: rem(14);
+        color: var(--color-greylight);
+      }
+      button {
+        padding-top: rem(14);
+        padding-bottom: rem(10);
+        padding-left: rem(16);
+        padding-right: rem(16);
+        background-color: var(--color-blue);
+        color: var(--color-white);
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: rem(11);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        text-align: center;
+        @media(max-width:792px){
+          padding-top: rem(13);
+          padding-bottom: rem(9);
+          padding-left: rem(18);
+          padding-right: rem(18);
+          font-weight: 400;
+        }
+      }
+    }
+
+    .footer__nav {
+      display: flex;
+      
+      .footer__svgmobile{
+        display: none;
+      }
+      column-gap: rem(100);
+      a {
+        text-decoration: none;
+      }
+      .footer__nav_list {
+        padding-bottom: rem(10);
+        text-decoration: none;
+        font-weight: 400;
+        font-size: rem(14);
+
+        li {
+          padding-bottom: rem(10);
+        }
+        .footer__nav_item {
+          font-weight: 700;
+          font-size: rem(14);
+        }
+        
+      }
+      @media(max-width: 828px){
+        column-gap: rem(60);
+      }
+      @media(max-width:792px){
+        display: block;
+        .footer__nav_item{
+          position: relative;
+        }
+        .footer__svgmobile{
+          display: flex;
+          position: absolute;
+          right: rem(-36);
+          top: rem(6);
+          cursor: pointer;
+        }
+        .footer__nav_itemhidden {
+          display: none;
+        }
+        .footer__nav_list{
+          text-align: left;
+          padding-top: rem(16);
+          padding-bottom: rem(16);
+          padding-left: rem(16);
+          padding-right: rem(43);
+          border-top: 1px solid  #bdbdbd;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 129%;
+          letter-spacing: -0.01em;
+          color: #7f7f7f;
+          
+        }
+      }
+    }
+    .footer__svg {
+      padding-top: rem(80);
+      display: flex;
+      column-gap: rem(30);
+      margin-left: rem(100);
+      @media(max-width:1442px){
+        display: none;
+      }
+      @media(max-width:792px){
+        padding-top: 0;
+        padding-bottom: rem(15);
+        display: flex;
+        margin: auto auto;
+        margin-top: rem(28);
+        width: rem(210);
+      }
+    }
+   
+  }
+  .footer__bot {
+    display: flex;
+    padding-top: rem(46);
+    padding-bottom: rem(27);
+    margin-left: rem(230);
+    column-gap: rem(81);
+    justify-content: center;
+    a {
+      text-decoration: none;
+      font-weight: 400;
+      font-size: rem(10);
+      color: #48494d;
+    }
+    @media(max-width:1442px){
+        margin-left: rem(400);
+      }
+      @media(max-width:792px){
+        display: block; 
+        text-align: left;
+        margin-left: 0;
+        background-color: var(--color-white);
+        a{
+          display: block; 
+          margin-bottom: rem(12);
+          margin-left: rem(10);
+        }
+      }
+  }
+}

@@ -1,0 +1,88 @@
+@use '../helpers' as *;
+
+
+.GidroCartitem_wrapper{
+    
+    display: flex;
+    
+    
+        .GidroCartitem_imgblock{
+            width: rem(500);
+    height: rem(579);
+            position: relative;
+            .GidroCartitem_imgblock__button{
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: rem(94);
+                height: rem(44);
+                border: none;
+                background-color: var(--color-blue);
+                color: var(--color-white);
+                letter-spacing: 0.12em;
+                font-size: rem(15);
+                font-weight: 400;
+                font-family: var(--font-family-base);
+            }
+            img{
+                width: fluid(500,320);
+                height: fluid(375,200 );
+                padding-top: rem(64)
+
+            }
+            .GidroCartitem_imgblock__priceblock{
+                text-align: center;
+                padding-top: rem(15);
+                .GidroCartitem_imgblock__priceblock_oldprice{
+                    font-size: rem(30);
+                    font-family: var(--font-family-accent);
+                    opacity: 0.6;
+                    color: var(--color-black);
+                    font-weight: 400;
+                }
+                .GidroCartitem_imgblock__priceblock_newprice{
+                    font-size: rem(40);
+                    font-family: var(--font-family-accent);
+                    color: var(--color-black);
+                    font-weight: 700;
+                }
+                a{
+                    font-family: var(--font-family-base);
+                    font-weight: 400;
+                    font-size: rem(15);
+                    color: var(--color-blue);
+                }
+            }
+        }  
+        .GidroCartitem_stats{
+            width: 100%;
+            text-align: right;
+            .GidroCartitem_stats__btnback{
+                background-color: var(--color-blue);
+                color: var(--color-white);
+                border: none;
+                text-transform: uppercase;
+                font-family: var(--font-family-base);
+                width: rem(250);
+                height: rem(50);
+            }
+            .GidroCartitem_stats__list{
+                width: 80%;
+                padding-top: rem(40);
+                padding-left: rem(180);
+                
+             li{
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: rem(20);
+                border-bottom: 1px solid var(--color-greylight);
+                p{
+                    margin-bottom: 0;
+                    font-weight: 400;
+                    font-size: rem(20);
+                }
+             }
+                
+            }
+        }  
+}

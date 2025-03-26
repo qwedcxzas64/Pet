@@ -1,0 +1,32 @@
+@use '../helpers' as *;
+
+
+.Filter__wraper{
+    width: rem(302);
+    
+    .Filter__sortFavorite{
+        .Filter__sortFavorite_list{
+            display: flex;
+            li{
+                display: flex;
+                column-gap: rem(12);
+                cursor: pointer;
+                
+                p{
+                    font-weight: 400;
+                    font-size: rem(14);
+                    font-family: var(--font-family-base);
+                    margin-right: rem(52);
+                }
+                svg{
+                    margin-top: rem(3);
+                }
+                .Filter__sortFavorite_boxActive {
+                     background-color: var(--color-blue);
+                     pointer-events: none;
+                }
+            }
+            
+        }
+    }
+}
