@@ -33,7 +33,7 @@ const dataitems = GetCartFromLS()
 
 const initialState :  GidroSliceState ={
     items :  dataitems?.items || [],
-    itemsforsort : dataitems?.items || [],
+    itemsforsort :  dataitems?.items || [],
     
     status : Status.LOADING,
 }
@@ -60,7 +60,8 @@ export const fetchGidro = createAsyncThunk <Gidro[], Record<string, any>>(
                   TypeSort,
                   FavoriteSortCurrent,
                   PaginationCurrent,
-                  PerPage
+                  PerPage,
+                  
                   
           } = params // Это параметры буду исполозвать позже для пагинации и фильтров
           
@@ -126,7 +127,7 @@ export const GidroSlice = createSlice({
                state.itemsforsort = asda
                state.items = asda
                   
-               console.log(state.items)
+               
                 }
                
     },
@@ -142,7 +143,6 @@ export const GidroSlice = createSlice({
            .addCase(fetchGidro.fulfilled, (state, action: PayloadAction<Gidro[]>) => {
               state.items = action.payload
               state.itemsforsort  = action.payload
-              
               state.status = Status.SUCCESS
            })
            .addCase(fetchGidro.rejected, (state) => {

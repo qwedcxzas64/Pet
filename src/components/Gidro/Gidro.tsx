@@ -10,6 +10,7 @@ import Filter from "../filter/Filter";
 
 
 
+
 const styles = require('../../styles/main.module.scss');
 
 
@@ -24,16 +25,15 @@ const Gidro = () =>{
     const adressstring = window.location.search
     const PaginationCurrent = useSelector((state:any)=> state.PaginationSlice.currentPage)
     const PerPage = useSelector((state:any)=> state.PaginationSlice.perPage)
-    
     const GidroItems = useSelector((state:any)=> state.GidroSlice.items)
-    
-    const isMounted = React.useRef(true);
+    const isMounted = React.useRef(false);
     
     
 const GetGidro = async () =>{
     dispatch(fetchGidro({
         PaginationCurrent,
-        PerPage
+        PerPage,
+        
     }))
 }
 
@@ -47,12 +47,12 @@ const onclickDELETEITEM = (i:number) =>{
     
 } 
 useEffect(()=>{
-    if(window.location.search){
+   if(adressstring) {
         GetGidro()
         
     }   
     
-}, [PaginationCurrent, adressstring,])
+}, [adressstring, PaginationCurrent])
 
 
    useEffect(()=>{
@@ -66,20 +66,11 @@ useEffect(()=>{
       
     } 
     isMounted.current = true;
-   } , [PaginationCurrent, adressstring, PerPage ])
+    
+   } , [PaginationCurrent, adressstring, PerPage,  ])
  
   
-   React.useEffect(() => {
-    if (window.location.search) {
-      const params = qs.parse(window.location.search.substring(1));
-
-      
-
-    
-      
-    }
-    
-  }, [])
+   
 
 // React.useEffect(()=>{
 //     if(isMounted.current){

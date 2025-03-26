@@ -4,7 +4,6 @@ import { SetADDitem, type Gidro } from '../../Redux/slices/GidroSlice';
 import { useAppDispatch} from "../../Redux/Store";
 import { useSelector} from "react-redux";
 
-
 const styles = require('../../styles/main.module.scss');
 
 
@@ -20,9 +19,8 @@ const dispatch = useAppDispatch()
         mode: 'onBlur'
       });
       const isMounted = React.useRef(false);
-    
+     
       const GidroItems = useSelector((state:any)=> state.GidroSlice.items)
-      
       const randomNum = Math.floor(Math.random() * 100);;
       
       
